@@ -10,11 +10,9 @@ const orbitron = Orbitron({
   weight: ["400", "700", "900"],
 });
 
-// Enhanced StarField with higher density and glow
 const StarField = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none bg-black">
-      {/* Layer 1: Dense background stars */}
       <div className="star-layer animate-slow-scroll" 
         style={{ 
           backgroundImage: 'radial-gradient(1.5px 1.5px at 20px 30px, #fff, rgba(0,0,0,0)), radial-gradient(1px 1px at 150px 50px, #fff, rgba(0,0,0,0)), radial-gradient(2px 2px at 50px 160px, #fff, rgba(0,0,0,0)), radial-gradient(1px 1px at 100px 250px, #77b5fe, rgba(0,0,0,0))', 
@@ -23,7 +21,6 @@ const StarField = () => {
         }} 
       />
       
-      {/* Layer 2: Mid-sized glowing stars */}
       <div className="star-layer animate-mid-scroll opacity-90" 
         style={{ 
           backgroundImage: 'radial-gradient(2px 2px at 100px 150px, #fff, rgba(0,0,0,0)), radial-gradient(2.5px 2.5px at 200px 300px, #fff, rgba(0,0,0,0)), radial-gradient(1.5px 1.5px at 50px 200px, #89cff0, rgba(0,0,0,0))', 
@@ -32,7 +29,6 @@ const StarField = () => {
         }} 
       />
       
-      {/* Layer 3: Larger, faster foreground "shimmer" stars */}
       <div className="star-layer animate-fast-scroll opacity-100" 
         style={{ 
           backgroundImage: 'radial-gradient(3px 3px at 50px 50px, #fff, rgba(0,0,0,0)), radial-gradient(2px 2px at 120px 120px, #fff, rgba(0,0,0,0))', 
@@ -95,14 +91,11 @@ export default function Home() {
   return (
     <div className={`relative w-full h-screen overflow-hidden bg-black ${orbitron.className}`}>
       
-      {/* BACKGROUND LAYER */}
       <div className="absolute inset-0 z-0">
         <StarField />
-        {/* Slightly reduced overlay opacity to keep stars vivid */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/40 z-10 pointer-events-none" />
       </div>
 
-      {/* UI Layers */}
       <div className="fixed top-0 left-0 w-full z-50">
         <Navbar />
       </div>
@@ -111,7 +104,6 @@ export default function Home() {
         <SocialSidebar />
       </div>
 
-      {/* Typography */}
       <div className="fixed bottom-[15vh] md:bottom-[12vh] left-1/2 -translate-x-1/2 z-40 text-center w-full px-6">
         <div className="flex flex-col items-center justify-center">
           <h1
@@ -136,7 +128,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Vignette - Adjusted for better star visibility in center */}
       <div className="absolute inset-0 pointer-events-none z-20 bg-[radial-gradient(circle_at_center,transparent_20%,rgba(0,0,0,0.7)_100%)]" />
     </div>
   );
